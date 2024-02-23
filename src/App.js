@@ -1,7 +1,15 @@
 import './App.css';
+import TodoTemplate from './componenets/TodoTemplate';
+import TodoInsert from './componenets/TodoInsert';
+import TodoList from './componenets/TodoList';
 
-function App() {
-  return <div className="App">Todo App을 만들자</div>;
+function App({ children }) {
+  return (
+    <TodoTemplate>
+      <TodoInsert />
+      <TodoList />
+    </TodoTemplate>
+  );
 }
 
 export default App;
