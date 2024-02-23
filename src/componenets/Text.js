@@ -4,7 +4,7 @@ import { css as emotionCss } from '@emotion/react';
 
 /** @jsxImportSource @emotion/react */
 
-const Text = ({ children, type, css, fontSize, fontWeight, color }) => {
+const Text = ({ children, className, type, css, fontSize, fontWeight, color }) => {
   const cssObject = emotionCss(
     {
       color,
@@ -14,19 +14,47 @@ const Text = ({ children, type, css, fontSize, fontWeight, color }) => {
 
   switch (type) {
     case 'h1':
-      return <h1 css={cssObject}>{children}</h1>;
+      return (
+        <h1 className={className} css={cssObject}>
+          {children}
+        </h1>
+      );
     case 'h2':
-      return <h2 css={cssObject}>{children}</h2>;
+      return (
+        <h2 className={className} css={cssObject}>
+          {children}
+        </h2>
+      );
     case 'h3':
-      return <h3 css={cssObject}>{children}</h3>;
+      return (
+        <h3 className={className} css={cssObject}>
+          {children}
+        </h3>
+      );
     case 'h4':
-      return <h4 css={cssObject}>{children}</h4>;
+      return (
+        <h4 className={className} css={cssObject}>
+          {children}
+        </h4>
+      );
     case 'h5':
-      return <h5 css={cssObject}>{children}</h5>;
+      return (
+        <h5 className={className} css={cssObject}>
+          {children}
+        </h5>
+      );
     case 'h6':
-      return <h6 css={cssObject}>{children}</h6>;
+      return (
+        <h6 className={className} css={cssObject}>
+          {children}
+        </h6>
+      );
     default:
-      return <div css={{ cssObject, fontSize, fontWeight }}>{children}</div>;
+      return (
+        <div className={className} css={{ cssObject, fontSize, fontWeight }}>
+          {children}
+        </div>
+      );
   }
 };
 
